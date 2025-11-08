@@ -1,0 +1,177 @@
+name: voidfall
+title: Voidfall
+edition: null
+player_count:
+  min: 1
+  max: 4
+playtime:
+  min: 90
+  max: 180
+complexity: very-heavy
+language: de
+author: null
+description: Ein episches Weltraum-4X-Spiel, in dem Spieler galaktische Häuser führen
+  und gegen die Leere kämpfen. Das Spiel umfasst 3 Zyklen mit Fokuskarten, Agenden,
+  Technologien und Kampf gegen die Leere. Spielbar kompetitiv, kooperativ oder solo.
+tags:
+- space
+- 4x
+- cooperative
+- competitive
+- solo
+- deck-building
+- area-control
+- crisis-management
+- technology-tree
+- resource-management
+- variable-player-powers
+components:
+- 1 Galaxietableau (doppelseitig)
+- 14 Haustableaus
+- 4 Ressourcentableaus
+- 1 Einflusstableau
+- 1 Agendatableau
+- 1 Krisentableau
+- 30 Sektorenteile
+- 9 Fokuskarten
+- 18 Hausfokuskarten
+- 10 Gemeinsame Fokuskarten
+- 10 Heroische Fokuskarten
+- 32 Agendakarten
+- 84 Technologiekarten
+- 68 Krisenkarten
+- 25 Alarmkarten
+- 33 Galaktische Ereigniskarten
+- 28 Herkunftskarten
+- 14 Gefallene Häuserkarten
+- Kampfplättchen
+- 48 Beuteplättchen
+- 27 Hinterlassenschaftsplättchen
+- 75 Ruhmplättchen
+- 42 Gildenplättchen
+- 40 Stützpunktplättchen
+- 12 Handelsplättchen
+- 36 Verderbnismarker
+- 12 Zivilisationsleisenmarker
+- 15 Leerensturmplättchen
+- 10 Vorbotenplättchen
+- 3 Katastrophenplättchen
+- 5 Zufluchttableaus
+- 3 Schwierigkeitskarten
+- 27 Bevölkerungswürfel
+- Flottenverbände (Korvetten, Wächter, Zerstörer, Träger, Schlächter)
+- 40 Flotten der Leere
+- 20 Flottenverbände der Leere
+- 1 Forschrittsbarriere
+toc:
+- title: Material
+  section: Material
+  page: 3
+- title: Materialbegrenzung
+  section: Materialbegrenzung
+  page: 5
+- title: Einleitung
+  section: Einleitung
+  page: 6
+- title: Ablauf von Zyklen
+  section: Ablauf von Zyklen
+  page: 7
+- title: A - Vorbereitungsphase
+  section: Vorbereitungsphase
+  page: 7
+- title: B - Fokusphase
+  section: Fokusphase
+  page: 9
+- title: C - Auswertungsphase
+  section: Auswertungsphase
+  page: 15
+- title: Ende der Partie
+  section: Ende der Partie
+  page: 16
+- title: Detaillierte Regeln
+  section: Detaillierte Regeln
+  page: 17
+- title: Sektoren
+  section: Sektoren
+  page: 18
+- title: Bevölkerung
+  section: Bevölkerung
+  page: 19
+- title: Ressourcenproduktion
+  section: Ressourcenproduktion
+  page: 19
+- title: Flotten und Flottenverbände
+  section: Flotten und Flottenverbände
+  page: 21
+- title: Flotten der Leere
+  section: Flotten der Leere
+  page: 22
+- title: 'Flottenbewegung: Sammeln & Eindringen'
+  section: Flottenbewegung
+  page: 23
+- title: Kampf
+  section: Kampf
+  page: 24
+- title: Zivilisationsleisten und -stufen
+  section: Zivilisationsleisten
+  page: 28
+- title: Verderbnis
+  section: Verderbnis
+  page: 29
+- title: Handelsplättchen
+  section: Handelsplättchen
+  page: 30
+- title: Technologien
+  section: Technologien
+  page: 31
+- title: Agenden
+  section: Agenden
+  page: 32
+- title: Gefecht
+  section: Gefecht
+  page: 33
+- title: Vorboten
+  section: Vorboten
+  page: 34
+- title: Krisentableau
+  section: Krisentableau
+  page: 34
+- title: Zuflüchte
+  section: Zuflüchte
+  page: 34
+- title: Kämpfe im Detail
+  section: Kämpfe im Detail
+  page: 35
+phases:
+- name: Vorbereitungsphase
+  description: Erneuern der Fokusauslage, Alarmstapel, Technologien, Zugreihenfolge
+    bestimmen und Galaktisches Ereignis aufdecken
+  order: 1
+- name: Fokusphase
+  description: 'Mehrere Runden mit Zügen: Krise aufdecken (Koop/Solo), Fokus auswählen,
+    Agieren, Aufräumen, Anwachsen der Leere (Koop/Solo)'
+  order: 2
+- name: Auswertungsphase
+  description: Die Leere schlägt zurück (Koop/Solo), Wartung zahlen, Galaktische Bestimmungen
+    erfüllen, Agendaziele überprüfen, Fokuskarten zurücknehmen
+  order: 3
+setup_steps:
+- Galaxietableau in die Mitte legen
+- Sektoren gemäß Szenario aufbauen
+- Haustableaus und Ressourcentableaus vorbereiten
+- Einflusstableau aufbauen
+- Agendatableau mit Agendastapeln vorbereiten
+- Krisentableau mit Krisenstapeln aufbauen
+- Fokuskarten-Auslage bilden (3 Gemeinsame/Heroische Fokusse)
+- Technologieauslage mit Basis- und Fortschrittlichen Technologien bilden
+- Galaktische Ereignisse für jeden Zyklus vorbereiten
+- Alarmstapel gemäß Schwierigkeitskarte vorbereiten (Koop/Solo)
+- Startressourcen und Startkomponenten gemäß Szenario verteilen
+- Herkunftskarten und Hausfokuskarten verteilen
+- Bevölkerungswürfel in Heimatsektoren platzieren
+- Startflotten einsetzen
+- Zugreihenfolge für ersten Zyklus bestimmen
+version: 1.0.0
+category: rulebooks
+created_at: '2025-11-08T18:24:08.583809'
+source_pdf: /Users/martinmaurer/Projects/open-mcp-tools/resources/VOIDFALL-Spielanleitung-DE-e1-v25-131393-131886.pdf

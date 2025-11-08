@@ -1,0 +1,125 @@
+name: dungeons-and-dragons-starter-set
+title: Dungeons & Dragons Einsteigerset
+edition: 5. Edition
+player_count:
+  min: 2
+  max: 6
+playtime: null
+complexity: medium
+language: de
+author: Wizards of the Coast
+description: Ein Rollenspiel-Einsteigerset für Dungeons & Dragons, das Spieler in
+  eine Welt voller Schwertkampf und Zauberei einführt. Spieler schlüpfen in die Rollen
+  von Abenteurern und erleben gemeinsam Geschichten, während ein Spielleiter die Welt
+  und ihre Herausforderungen beschreibt.
+tags:
+- rollenspiel
+- fantasy
+- kooperativ
+- storytelling
+- abenteuer
+- kampf
+- magie
+- würfelspiel
+components:
+- W4 (vierseitiger Würfel)
+- W6 (sechsseitiger Würfel)
+- W8 (achtseitiger Würfel)
+- W10 (zehnseitiger Würfel)
+- W12 (zwölfseitiger Würfel)
+- W20 (zwanzigseitiger Würfel)
+- Charakterbögen
+- Abenteuerbuch
+- Regelbuch
+toc:
+- title: Die Spielregeln
+  section: Kapitel 1
+  page: 2
+- title: Zu Beginn
+  section: Kapitel 1
+  page: 3
+- title: Sechs Attribute
+  section: Kapitel 1
+  page: 4
+- title: Kampfregeln
+  section: Kapitel 2
+  page: 8
+- title: Die Kampfreihenfolge
+  section: Kapitel 2
+  page: 9
+- title: Bewegung und Positionen
+  section: Kapitel 2
+  page: 10
+- title: Aktionen im Kampf
+  section: Kapitel 2
+  page: 10
+- title: Angreifen
+  section: Kapitel 2
+  page: 11
+- title: Deckung
+  section: Kapitel 2
+  page: 12
+- title: Schaden und Heilung
+  section: Kapitel 2
+  page: 12
+- title: Ins Abenteuer
+  section: Kapitel 3
+  page: 14
+- title: Reisen
+  section: Kapitel 3
+  page: 15
+- title: Rasten
+  section: Kapitel 3
+  page: 15
+- title: Belohnungen
+  section: Kapitel 3
+  page: 15
+- title: Ausrüstung
+  section: Kapitel 3
+  page: 16
+- title: Waffen
+  section: Kapitel 3
+  page: 17
+- title: Zauberwirken
+  section: Kapitel 4
+  page: 20
+- title: Was ist ein Zauber?
+  section: Kapitel 4
+  page: 21
+- title: Einen Zauber wirken
+  section: Kapitel 4
+  page: 21
+- title: Zauberlisten
+  section: Kapitel 4
+  page: 23
+- title: Zauber
+  section: Kapitel 4
+  page: 24
+- title: Zustände
+  section: Anhang
+  page: 32
+phases:
+- name: Initiative bestimmen
+  description: Alle Beteiligten würfeln auf Initiative (Geschicklichkeitswurf) und
+    bestimmen damit die Zugreihenfolge der Kämpfenden
+  order: 1
+- name: Züge ausführen
+  description: Jeder Kampfbeteiligte macht einen Zug in der Reihenfolge der Initiative.
+    In jedem Zug kann sich ein Charakter bewegen und eine Aktion ausführen
+  order: 2
+- name: Runde beenden
+  description: Wenn jeder Kampfbeteiligte einen Zug ausgeführt hat, endet die Runde.
+    Der Kampf wird mit der nächsten Runde fortgesetzt
+  order: 3
+setup_steps:
+- Jeder Spieler wählt einen Charakter aus den fünf beiliegenden Auswahlmöglichkeiten
+- Spieler geben ihren Charakteren Namen und beschreiben ihr Aussehen
+- Ein Spieler übernimmt die Rolle des Spielleiters (SL)
+- Der SL macht sich mit dem Abenteuer vertraut
+- Der SL legt fest, wo alle Charaktere und Monster zu Beginn stehen
+- Bei Kampfbeginn wird die Überraschung festgelegt
+- Alle Beteiligten würfeln auf Initiative, um die Zugreihenfolge zu bestimmen
+version: 1.0.0
+category: rulebooks
+created_at: '2025-11-08T18:24:36.761599'
+source_pdf: /Users/martinmaurer/Projects/open-mcp-tools/resources/starterset_rulebook_de.pdf

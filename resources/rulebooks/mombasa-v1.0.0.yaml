@@ -1,0 +1,111 @@
+name: mombasa
+title: Mombasa
+edition: null
+player_count:
+  min: 2
+  max: 4
+playtime:
+  min: 90
+  max: 150
+complexity: heavy
+language: de
+author: Alexander Pfister
+description: Ein Strategiespiel über Handelskompanien im Zeitalter des Kolonialismus.
+  Spieler erwerben Anteile an vier großen Handelskompanien (Mombasa, Cape Town, Saint-Louis,
+  Cairo) und breiten deren Handelsposten über Afrika aus, um den Wert ihrer Anteile
+  zu steigern.
+tags:
+- economic
+- hand-management
+- area-control
+- stock-holding
+- action-selection
+- strategic
+- trading
+- investment
+components:
+- 1 Spielplan
+- 4 doppelseitige Kompanieleisten
+- 72 Buchplättchen
+- 10 Startplättchen
+- 4 Spielerablagen
+- 4 Bonusplättchen
+- 44 Aktionskarten
+- 60 Münzen (40x 1 Pfund, 20x 5 Pfund)
+- 60 Handelsposten (je 15 in 4 Farben)
+- 36 Start-Aktionskarten (9 pro Spielerfarbe)
+- 16 Anteilsmarker (4 pro Spielerfarbe)
+- 4 1er-Ausbreitungskarten
+- 20 Bonusmarker (5 pro Spielerfarbe)
+- 4 Tintenfass-Marker
+- 4 Diamanten-Marker
+- 4 Leistenkarten
+- 1 Startspieler-Marker
+- 1 Wertungsblock
+- 4 Übersichten
+toc:
+- title: Spielmaterial
+  section: Spielmaterial
+  page: 1
+- title: Spielvorbereitung für das erste Spiel
+  section: Spielvorbereitung
+  page: 2
+- title: Ziel des Spiels
+  section: Spielziel
+  page: 3
+- title: Spielablauf
+  section: Spielablauf
+  page: 4
+- title: 'Phase 1: Planungsphase'
+  section: Planungsphase
+  page: 4
+- title: 'Phase 2: Allgemeine Aktionsphase'
+  section: Aktionsphase
+  page: 4
+- title: 'Phase 3: Vorbereitungsphase für die nächste Runde'
+  section: Vorbereitungsphase
+  page: 10
+phases:
+- name: Planungsphase
+  description: Alle Spieler wählen gleichzeitig Karten aus ihren Handkarten und legen
+    diese verdeckt an ihre Aktions-Slots. Danach werden alle Karten aufgedeckt.
+  order: 1
+- name: Allgemeine Aktionsphase
+  description: 'Spieler führen reihum Spielzüge aus, indem sie eine von sechs möglichen
+    Aktionen wählen: Warenkarten nutzen, Ausbreitungskarten nutzen, Buchhalter-Karte
+    nutzen, Diamantenhändler-Karte nutzen, Bonusmarker setzen oder Aktionsphase beenden.'
+  order: 2
+- name: Vorbereitungsphase für die nächste Runde
+  description: Münzen werden von der Rundenleiste zur Bücherauslage gelegt, die Kartenauslage
+    wird aufgefüllt und Spieler nehmen ihre Bonusmarker zurück.
+  order: 3
+setup_steps:
+- Legt den Spielplan in die Tischmitte
+- Legt die Kompanieleisten A1, B1, C1, D1 an die entsprechenden Seiten des Spielplans
+  (Mombasa schwarz, Cape Town rot, Saint-Louis weiß, Cairo orange)
+- Stellt die 15 Handelsposten jeder Farbe auf die Felder in der jeweiligen Kompaniebasis
+- Sortiert die 44 Aktionskarten nach Buchstaben (A-E) und bildet einen verdeckten
+  Stapel (E unten, dann D, C, B, A oben)
+- Füllt die 12 Felder der Kartenauslagen mit Karten vom Aktionskartenstapel (rechte
+  Spalte zuerst, dann mittlere, dann linke)
+- Legt die Münzen als Vorrat (Bank) neben den Spielplan
+- Füllt die Felder 2-7 der Rundenleiste mit Münzen entsprechend der Spielerzahl
+- Sortiert die 72 Buchplättchen nach Buchstaben (A, B, C) und legt sie als verdeckten
+  Vorrat bereit
+- Füllt die 12 Felder der Bücherauslage mit je 4 aufgedeckten Plättchen pro Buchstabe
+- Legt die 4 Bonusplättchen rechts vom Spielplan bereit
+- 'Jeder Spieler wählt eine Farbe und erhält: Spielerablage, 9 Start-Aktionskarten,
+  4 Anteilsmarker, 1 Diamanten-Marker, 1 Tintenfass-Marker, 1 Pfund, Bonusmarker (2-3
+  je nach Spielerzahl)'
+- Bestimmt einen Startspieler und gebt ihm den Startspieler-Marker
+- Jeder Spieler erhält eine bestimmte 1er-Ausbreitungskarte entsprechend seiner Spielreihenfolge
+- Gebt jedem Spieler ein bestimmtes Startplättchen entsprechend seiner Spielreihenfolge
+- Jeder Spieler legt sein Startplättchen offen auf das Umschlagfeld seiner Spielerablage
+- Jeder Spieler stellt seinen Tintenfass-Marker auf das Tintenfass-Symbol seines Startplättchens
+- Jeder Spieler legt die 3 auf seinem Startplättchen angegebenen Karten offen oberhalb
+  seiner Spielerablage an die Sammel-Slots
+- Jeder Spieler erhält seinen Startbonus
+version: 1.0.0
+category: rulebooks
+created_at: '2025-11-08T18:21:45.882123'
+source_pdf: /Users/martinmaurer/Projects/open-mcp-tools/resources/56008dc97d2d2.pdf

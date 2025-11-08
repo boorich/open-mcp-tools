@@ -1,0 +1,165 @@
+name: on-mars
+title: On Mars
+edition: German Edition
+player_count:
+  min: 1
+  max: 4
+playtime:
+  min: 90
+  max: 150
+complexity: heavy
+language: de
+author: Vital Lacerda
+description: Ein komplexes Strategiespiel über die Kolonisierung des Mars. Spieler
+  sind Chefastronauten privater Forschungsunternehmen, die eine autarke Kolonie auf
+  dem Mars aufbauen. Sie reisen zwischen der Raumstation im Orbit und der Planetenoberfläche,
+  bauen Gebäude, entwickeln Technologien und erfüllen Missionen.
+tags:
+- worker-placement
+- resource-management
+- tech-tree
+- mission-based
+- solo-mode
+- complex-strategy
+- space-theme
+- colony-building
+- action-selection
+components:
+- 1 Spielplan
+- 4 Spielertableaus
+- 1 Referenzhandbuch
+- 4 Spielhilfen
+- 5 Startgebäudeplättchen
+- 30 Gebäudeplättchen
+- 20 Unterkunftsplättchen
+- 1 Gebäudeplättchenhalter
+- 1 Wissenschaftler- und Erdenverträge-Tableau
+- 8 Forschungsplättchen
+- 19 Entdeckungsplättchen
+- 16 Techplättchen
+- 4 Unterkunfts-Techplättchen
+- 3 Missionsanzeigewürfel
+- 3 Missionsmarker
+- 1 Verbleibende-Missionen-Marker
+- 8 LSS-Belohnungsplättchen
+- 1 Shuttle-Marker
+- 1 Kolonielevelmarker
+- 12 Erste-Kolonisten-Karten
+- 6 Erste-Kolonisten-Plättchen
+- 6 Wissenschaftlermarker
+- 20 Ressourcenplättchen jeden Typs
+- 30 Kristalle
+- 4 LSS-Anzeige-Marker
+- 48 Kolonisten
+- 4 Rover
+- 20 Schiffe
+- 20 Fortschrittswürfel
+- 16 Bots
+- 4 Spielermarker
+- 4 GP-Marker
+- 32 Gebäudefortschritt-Marker
+- 24 Bauplankarten
+- 6 Wissenschaftlerkarten
+- 12 Erdenvertragskarten
+- 16 Privatzielkarten
+- 9 Missionskarten
+- 12 Solokarten
+toc:
+- title: Spielübersicht
+  section: Overview
+  page: 2
+- title: Spielmaterial
+  section: Components
+  page: 3
+- title: Spielaufbau
+  section: Setup
+  page: 4
+- title: Spielervorbereitung
+  section: Player Setup
+  page: 6
+- title: Mineralien
+  section: Minerals
+  page: 7
+- title: Wichtige Erläuterungen
+  section: Important Rules
+  page: 7
+- title: Spielverlauf
+  section: Gameplay
+  page: 8
+- title: Kolonisierungsphase
+  section: Colonization Phase
+  page: 8
+- title: Aktionen auf dem Spielplan
+  section: Board Actions
+  page: 8
+- title: Hauptaktionen der Orbitalstation
+  section: Orbital Station Actions
+  page: 9
+- title: Hauptaktionen der Kolonie
+  section: Colony Actions
+  page: 12
+- title: Sonderaktionen
+  section: Special Actions
+  page: 18
+- title: Missionen
+  section: Missions
+  page: 19
+- title: Privatziele
+  section: Private Goals
+  page: 19
+- title: Shuttlephase
+  section: Shuttle Phase
+  page: 19
+- title: Ende des Spiels
+  section: Game End
+  page: 21
+- title: Solospiel
+  section: Solo Game
+  page: 22
+- title: 2-Spieler-Spiel
+  section: 2-Player Game
+  page: 24
+- title: Erste-Kolonisten-Variante
+  section: First Colonists Variant
+  page: 24
+- title: Space-Oddity-Variante
+  section: Space Oddity Variant
+  page: 24
+phases:
+- name: Kolonisierungsphase
+  description: In Spielerreihenfolge macht jeder Spieler einen Zug, in dem er 1 Hauptaktion
+    und optional 1 Sonderaktion durchführt. Verfügbare Aktionen hängen davon ab, ob
+    der Spieler im Orbit oder in der Kolonie ist.
+  order: 1
+- name: Shuttlephase
+  description: Das Shuttle reist entweder zwischen Orbit und Kolonie oder bewegt sich
+    näher zum Reisen. Spieler können mit dem Shuttle zwischen den beiden Bereichen
+    des Spielplans wechseln.
+  order: 2
+setup_steps:
+- Spielplan in die Mitte des Tisches legen
+- Entdeckungsplättchen mischen und 2 aufdecken
+- Warenlager mit je 3 Kristallen, Batterien, Wasser, Pflanzen und Sauerstoff füllen
+  (2 im 2-Spieler-Spiel)
+- Techplättchen sortieren und im Techbereich auslegen
+- Bauplankarten nach Level sortieren und 6 Karten auslegen
+- Wissenschaftlertableau mit 6 Wissenschaftlerkarten in festgelegter Reihenfolge bestücken
+- Erdenverträge als verdeckten Stapel bereitlegen
+- Startmine auf markiertes Feld in der Mitte legen
+- Übrige Startgebäude zufällig auf markierte Hexfelder legen
+- Gebäudeplättchen nach Typ sortieren und im Halter platzieren
+- Forschungsplättchen nach Typ sortiert auf markierte Hexfelder legen
+- Missionskarten auswählen (2 kurze + 1 lange oder 1 kurze + 2 lange) und auslegen
+- Missionsanzeigewürfel entsprechend der Spieleranzahl platzieren
+- Verbleibende-Missionen-Marker auf Feld 3 stellen
+- Kolonielevelmarker auf linke Seite der zweiten Reihe stellen
+- LSS-Anzeigemarker in untere Reihe legen
+- 4 LSS-Belohnungsplättchen zufällig auslegen
+- Jeder Spieler wählt eine Farbe und erhält Spielmaterial
+- Spieler platzieren Spielermarker auf Reihenfolgeleiste und erhalten Boni
+- Spieler mit höchster Nummer auf Reihenfolgeleiste platziert das Shuttle
+version: 1.0.0
+category: rulebooks
+created_at: '2025-11-08T18:23:07.538487'
+source_pdf: /Users/martinmaurer/Projects/open-mcp-tools/resources/Spielanleitung on
+  Mars auf deutsch.pdf

@@ -1,0 +1,142 @@
+name: mage-knight-board-game
+title: Mage Knight Board Game
+edition: null
+player_count:
+  min: 1
+  max: 4
+playtime:
+  min: 60
+  max: 240
+complexity: very-heavy
+language: de
+author: WizKids Games
+description: Ein komplexes Fantasy-Abenteuerspiel, in dem Spieler als mächtige Mage
+  Knights durch eine modulare Landschaft ziehen, Feinde bekämpfen, Städte erobern
+  und ihre Charaktere durch Deck-Building und Levelaufstieg verbessern.
+tags:
+- fantasy
+- deck-building
+- adventure
+- exploration
+- combat
+- modular-board
+- hand-management
+- scenario-based
+- solo
+- cooperative
+- competitive
+components:
+- Heldenkarten
+- Heldenfi guren
+- Spielplanteile
+- Handlungskarten
+- Einheitenkarten
+- Zauberkarten
+- Artefaktkarten
+- Verletzungskarten
+- Fortgeschrittene Aktionskarten
+- Taktikkarten
+- Feindplättchen
+- Ruinenplättchen
+- Fähigkeitsplättchen
+- Levelplättchen
+- Befehlsplättchen
+- Schildplättchen
+- Zugfolgeplättchen
+- Manawürfel
+- Manamarker
+- Stadtkarten
+- Stadtfi guren
+- Ortsübersichten
+- Tag-/Nachttafel
+- Ruhmes- und Ansehenstafel
+toc:
+- title: Spielablauf
+  section: Spielablauf
+  page: 1
+- title: Spielaufbau für das vollständige Spiel
+  section: Spielaufbau
+  page: 3
+- title: Eine Spielrunde (Tag oder Nacht)
+  section: Spielrunde
+  page: 4
+- title: Grundsätzliche Spielkonzepte
+  section: Grundkonzepte
+  page: 4
+- title: Ein Spielerzug
+  section: Spielerzug
+  page: 5
+- title: Bewegung
+  section: Bewegung
+  page: 6
+- title: Interaktion mit Bewohnern
+  section: Interaktion
+  page: 7
+- title: Kampf gegen Feinde
+  section: Kampf
+  page: 7
+- title: Ende des Zugs
+  section: Zugende
+  page: 9
+- title: Verletzungen und Heilung
+  section: Verletzungen
+  page: 10
+- title: Kampf Spieler-gegen-Spieler
+  section: PvP
+  page: 10
+- title: Gemeinsamer Stadtüberfall
+  section: Stadtüberfall
+  page: 11
+- title: Allgemeine Grundsätze
+  section: Grundsätze
+  page: 12
+- title: Varianten
+  section: Varianten
+  page: 13
+- title: Szenarien
+  section: Szenarien
+  page: 15
+phases:
+- name: Rundenstart
+  description: Tag-/Nachttafel umdrehen, Quelle erfrischen, Angebote erneuern
+  order: 1
+- name: Taktikwahl
+  description: Jeder Spieler wählt eine Taktikkarte für die Runde
+  order: 2
+- name: Spielerzüge
+  description: Spieler führen ihre Züge in Zugfolge aus
+  order: 3
+- name: Bewegungsphase
+  description: Spieler kann sich bewegen und Spielplanteile aufdecken
+  order: 4
+- name: Aktionsphase
+  description: Spieler führt eine Aktion aus (Kampf, Interaktion oder Erkunden)
+  order: 5
+- name: Zugende
+  description: Manawürfel zurücklegen, Karten ablegen, Belohnungen erhalten
+  order: 6
+setup_steps:
+- Ein Szenario wählen
+- Spielerreihenfolge festlegen und Helden wählen
+- Ruhmes- und Ansehenstafel vorbereiten - Schildplättchen auf Feld 0 legen
+- Feind- und Ruinenplättchen nach Rückseiten sortieren und als verdeckte Stapel bereitlegen
+- Artefaktdeck mischen und als verdeckten Stapel bereitlegen
+- Verletzungsdeck als offenen Stapel bereitlegen
+- Zauberdeck mischen und 3 Karten als Angebot auslegen
+- Deck der Fortgeschrittenen Aktionen mischen und 3 Karten als Angebot auslegen
+- Deck der normalen Einheiten und Eliteeinheiten mischen
+- Einheitenangebot bilden (Anzahl Spieler + 2 Karten)
+- Tag-/Nachttafel mit Tagseite nach oben auslegen
+- Quelle mit Manawürfeln füllen (Anzahl Spieler + 2)
+- Tag-Taktikkarten auslegen
+- Stapel der Spielplanteile gemäß Szenario vorbereiten
+- Startteil gemäß Szenario auslegen
+- 2-3 Spielplanteile aufdecken und anlegen
+- Jeder Spieler mischt sein Handlungsdeck (16 Basis-Aktionskarten)
+- Jeder Spieler zieht 5 Handkarten
+- Jeder Spieler legt seine Levelplättchen als Stapel bereit
+- Jeder Spieler mischt seine Fähigkeitsplättchen als verdeckten Stapel
+version: 1.0.0
+category: rulebooks
+created_at: '2025-11-08T18:22:29.572573'
+source_pdf: /Users/martinmaurer/Projects/open-mcp-tools/resources/5688f1d81ad08.pdf

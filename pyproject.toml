@@ -1,7 +1,7 @@
 [project]
-name = "canton-mcp-server"
+name = "open-mcp-tools"
 version = "0.1.0"
-description = "MCP server for Canton blockchain development with DAML validation, authorization patterns, DCAP performance tracking, and x402 payments"
+description = "General-purpose MCP server with extensible tool modules, DCAP performance tracking, and x402 payments"
 readme = "README.md"
 authors = [
     { name = "empea-careercriminal", email = "empeamtk@googlemail.com" }
@@ -17,7 +17,7 @@ dependencies = [
     "pyyaml>=6.0.0",
     "jsonschema>=4.0.0",
 ]
-keywords = ["canton", "daml", "blockchain", "mcp", "digital-asset"]
+keywords = ["mcp", "model-context-protocol", "tools", "tabletop"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -29,11 +29,11 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/empea-careercriminal/canton-mcp-server"
-Repository = "https://github.com/empea-careercriminal/canton-mcp-server"
+Homepage = "https://github.com/empea-careercriminal/open-mcp-tools"
+Repository = "https://github.com/empea-careercriminal/open-mcp-tools"
 
 [project.scripts]
-canton-mcp-server = "canton_mcp_server.cli:main"
+open-mcp-tools = "open_mcp_tools.cli:main"
 
 [build-system]
 requires = ["hatchling"]
@@ -42,4 +42,11 @@ build-backend = "hatchling.build"
 [dependency-groups]
 dev = [
     "pytest>=8.4.2",
+]
+ingestion = [
+    "pdfplumber>=0.10.0",
+    "pypdfium2>=4.0.0",
+    "PyPDF2>=3.0.0",
+    "openai>=1.0.0",
+    "anthropic>=0.18.0",
 ]
