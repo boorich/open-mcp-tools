@@ -149,7 +149,7 @@ Replace `/path/to/open-mcp-tools` with the actual path to your project directory
 
 Click the button below to automatically add the server to Cursor:
 
-[Add open-mcp-tools MCP server to Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=open-mcp-tools&config=eyJvcGVuLW1jcC10b29scyI6IHsidHlwZSI6ICJzc2UiLCAidXJsIjogImh0dHA6Ly9sb2NhbGhvc3Q6NzI4NC9tY3AifX0=)
+[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=open-mcp-tools&config=eyJ0eXBlIjoic3NlIiwidXJsIjoiaHR0cDovL2xvY2FsaG9zdDo3Mjg0L21jcCJ9)
 
 **Prerequisites:**
 1. Make sure the server is running (`uv run open-mcp-tools serve`)
