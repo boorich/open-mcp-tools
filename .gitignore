@@ -178,3 +178,7 @@ restart-server.sh
 
 # DAML audit logs (generated at runtime)
 daml_audit_logs/
+
+# PDF source files (too large for GitHub, YAML files are what matter)
+resources/*.pdf
+resources/**/*.pdf
