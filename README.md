@@ -118,6 +118,62 @@ The server runs on `http://localhost:7284` by default.
 npx @modelcontextprotocol/inspector http://localhost:7284/mcp
 ```
 
+## Using with Claude Desktop
+
+For Claude Desktop, the server runs in stdio mode. Add to your Claude Desktop config:
+
+**Location:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "open-mcp-tools": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "/path/to/open-mcp-tools",
+        "open-mcp-tools",
+        "stdio"
+      ]
+    }
+  }
+}
+```
+
+Replace `/path/to/open-mcp-tools` with the actual path to your project directory.
+
+## Using with Cursor
+
+### Quick Install (Recommended)
+
+Click the button below to automatically add the server to Cursor:
+
+[Add open-mcp-tools MCP server to Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=open-mcp-tools&config=eyJvcGVuLW1jcC10b29scyI6IHsidHlwZSI6ICJzc2UiLCAidXJsIjogImh0dHA6Ly9sb2NhbGhvc3Q6NzI4NC9tY3AifX0=)
+
+**Prerequisites:**
+1. Make sure the server is running (`uv run open-mcp-tools serve`)
+2. The server must be accessible at `http://localhost:7284/mcp`
+
+### Manual Installation
+
+Alternatively, manually add to your Cursor MCP config:
+
+**Location:** `~/.cursor/mcp.json`
+
+```json
+{
+  "mcpServers": {
+    "open-mcp-tools": {
+      "type": "sse",
+      "url": "http://localhost:7284/mcp"
+    }
+  }
+}
+```
+
+**Note:** The server must be running before Cursor can connect to it.
+
 ## Available Tools
 
 ### Tabletop Tools
