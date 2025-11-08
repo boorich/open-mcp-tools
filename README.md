@@ -69,8 +69,8 @@ git clone <repository-url>
 cd canton-mcp-server
 
 # Copy environment template (optional)
-cp .env.canton.example .env.canton
-# Edit .env.canton with your configuration
+cp .env.example .env
+# Edit .env with your configuration
 
 # Start with docker-compose
 docker-compose up -d
@@ -373,7 +373,7 @@ echo "Errors: $(docker-compose logs mcp-tester | grep -c '⚠️')"
 
 ## Configuration
 
-The server uses environment variables for configuration. Create a `.env.canton` file (or set system environment variables):
+The server uses environment variables for configuration. Create a `.env` file (or set system environment variables):
 
 ```bash
 # MCP Server Configuration
@@ -408,7 +408,7 @@ The Canton MCP Server supports **dual payment options**, allowing clients to pay
 
 To enable USDC payments:
 
-1. Set `X402_ENABLED=true` in `.env.canton`
+1. Set `X402_ENABLED=true` in `.env`
 2. Configure your Ethereum wallet address: `X402_WALLET_ADDRESS=0x...`
 3. Optionally set private key for automated settlement: `X402_WALLET_PRIVATE_KEY=...`
 4. Set network: `X402_NETWORK=base-sepolia` (or `base-mainnet` for production)
@@ -417,7 +417,7 @@ To enable USDC payments:
 
 To enable Canton Coin payments:
 
-1. Set `CANTON_ENABLED=true` in `.env.canton`
+1. Set `CANTON_ENABLED=true` in `.env`
 2. Start your Canton x402 facilitator service (see [canton-x402-facilitator](https://github.com/your-org/canton-x402-facilitator))
 3. Configure facilitator URL: `CANTON_FACILITATOR_URL=http://localhost:3000`
 4. Set your Canton payee party ID: `CANTON_PAYEE_PARTY=ServiceProvider::12207...abc`
@@ -897,7 +897,7 @@ The server automatically broadcasts performance metrics using DCAP v2 protocol:
 - **Default Port**: 10191
 - **Metrics Tracked**: Tool name, execution time, success/failure, anonymized parameters
 
-Configure DCAP in `.env.canton` or via environment variables. Performance data is sent to dashboards/monitoring systems without impacting tool execution.
+Configure DCAP in `.env` or via environment variables. Performance data is sent to dashboards/monitoring systems without impacting tool execution.
 
 **Note**: Set `DCAP_MULTICAST_IP` to either:
 - A direct UDP relay address (e.g., `159.89.110.236`)

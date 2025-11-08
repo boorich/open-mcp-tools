@@ -1,7 +1,7 @@
 """
-Canton MCP Server Environment Configuration
+Open MCP Tools Server Environment Configuration
 
-Handles loading environment variables from .env.canton file or system environment.
+Handles loading environment variables from .env file or system environment.
 Supports both local development and isolated deployment environments.
 """
 
@@ -14,39 +14,39 @@ from dotenv import dotenv_values, load_dotenv
 ENV_VALUES = {}
 
 # Check if running in an isolated environment (e.g., AWS ECS, Kubernetes, etc.)
-# where .env.canton file is not available
+# where .env file is not available
 is_isolated_environment = (
     os.environ.get("IS_ISOLATED_ENVIRONMENT", "false").lower() == "true"
 )
 
 # Environment variable loading strategy:
-# - Local development: Load from .env.canton file for convenience
+# - Local development: Load from .env file for convenience
 # - Isolated environments: Use system environment variables only
 if not is_isolated_environment:
-    # Local development mode: Load environment variables from .env.canton file
-    env_canton_path = Path(__file__).parent.parent.parent / ".env.canton"
+    # Local development mode: Load environment variables from .env file
+    env_path = Path(__file__).parent.parent.parent / ".env"
 
-    if env_canton_path.exists():
-        load_dotenv(env_canton_path)
-        ENV_VALUES = dotenv_values(env_canton_path)
+    if env_path.exists():
+        load_dotenv(env_path)
+        ENV_VALUES = dotenv_values(env_path)
     else:
-        # Try to find .env.canton in current working directory
-        cwd_env_path = Path.cwd() / ".env.canton"
+        # Try to find .env in current working directory
+        cwd_env_path = Path.cwd() / ".env"
         if cwd_env_path.exists():
             load_dotenv(cwd_env_path)
             ENV_VALUES = dotenv_values(cwd_env_path)
         else:
             print(
-                "WARNING: .env.canton file not found. "
-                "Canton MCP server will use system environment variables only. "
-                f"Searched locations:\n  - {env_canton_path}\n  - {cwd_env_path}",
+                "WARNING: .env file not found. "
+                "Open MCP Tools server will use system environment variables only. "
+                f"Searched locations:\n  - {env_path}\n  - {cwd_env_path}",
                 file=sys.stderr,
             )
             ENV_VALUES = {}
 
 else:
     # Isolated environment mode: Load all configuration from system environment variables
-    # This is used in production deployments where .env.canton files are not accessible
+    # This is used in production deployments where .env files are not accessible
     ENV_VALUES = {}
 
 # MCP Server Configuration
@@ -86,8 +86,8 @@ ENV_VALUES["DCAP_MULTICAST_IP"] = os.getenv(
     "DCAP_MULTICAST_IP", ""
 )  # Must be explicitly configured
 ENV_VALUES["DCAP_PORT"] = os.getenv("DCAP_PORT", "10191")
-ENV_VALUES["DCAP_SERVER_ID"] = os.getenv("DCAP_SERVER_ID", "canton-mcp")
-ENV_VALUES["DCAP_SERVER_NAME"] = os.getenv("DCAP_SERVER_NAME", "Canton MCP Server")
+ENV_VALUES["DCAP_SERVER_ID"] = os.getenv("DCAP_SERVER_ID", "open-mcp-tools")
+ENV_VALUES["DCAP_SERVER_NAME"] = os.getenv("DCAP_SERVER_NAME", "Open MCP Tools Server")
 # DCAP v2.4 - Fallback values when caller/payer cannot be determined from request
 # In production, these should be extracted from X-Caller-ID header and x402 payment
 ENV_VALUES["DCAP_DEFAULT_CALLER"] = os.getenv("DCAP_DEFAULT_CALLER", "unknown-client")

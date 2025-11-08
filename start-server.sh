@@ -1,23 +1,23 @@
 #!/usr/bin/env bash
 set -e
 
-# Canton MCP Server startup script
+# Open MCP Tools Server startup script
 cd "$(dirname "$0")"
 
-# Load environment if .env.canton exists
-if [ -f .env.canton ]; then
-    echo "📝 Loading configuration from .env.canton"
-    export $(grep -v '^#' .env.canton | xargs)
+# Load environment if .env exists
+if [ -f .env ]; then
+    echo "📝 Loading configuration from .env"
+    export $(grep -v '^#' .env | xargs)
 fi
 
 # Use uv if available, fall back to python -m
 if command -v uv &> /dev/null; then
-    echo "🚀 Starting Canton MCP Server with uv..."
-    exec uv run canton-mcp-server serve
-elif command -v canton-mcp-server &> /dev/null; then
-    echo "🚀 Starting Canton MCP Server..."
-    exec canton-mcp-server serve
+    echo "🚀 Starting Open MCP Tools Server with uv..."
+    exec uv run open-mcp-tools serve
+elif command -v open-mcp-tools &> /dev/null; then
+    echo "🚀 Starting Open MCP Tools Server..."
+    exec open-mcp-tools serve
 else
-    echo "🚀 Starting Canton MCP Server with python -m..."
-    exec python -m canton_mcp_server.cli serve
+    echo "🚀 Starting Open MCP Tools Server with python -m..."
+    exec python -m open_mcp_tools.cli serve
 fi

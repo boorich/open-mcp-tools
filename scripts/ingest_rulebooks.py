@@ -16,15 +16,15 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional
 
-# Load environment variables from .env.canton if it exists
+# Load environment variables from .env if it exists
 try:
     from dotenv import load_dotenv
-    env_path = Path(__file__).parent.parent / ".env.canton"
+    env_path = Path(__file__).parent.parent / ".env"
     if env_path.exists():
         load_dotenv(env_path)
     else:
         # Try current directory
-        cwd_env = Path.cwd() / ".env.canton"
+        cwd_env = Path.cwd() / ".env"
         if cwd_env.exists():
             load_dotenv(cwd_env)
 except ImportError:

@@ -188,12 +188,12 @@ class PaymentHandler:
         if not self.wallet_address:
             raise ValueError(
                 "X402_ENABLED=true but X402_WALLET_ADDRESS not configured. "
-                "Please set X402_WALLET_ADDRESS in .env.canton or disable x402 with X402_ENABLED=false"
+                "Please set X402_WALLET_ADDRESS in .env or disable x402 with X402_ENABLED=false"
             )
         if not self.network:
             raise ValueError(
                 "X402_ENABLED=true but X402_NETWORK not configured. "
-                "Please set X402_NETWORK (e.g., 'base', 'base-sepolia') in .env.canton"
+                "Please set X402_NETWORK (e.g., 'base', 'base-sepolia') in .env"
             )
 
     def _validate_canton_configuration(self):
@@ -201,17 +201,17 @@ class PaymentHandler:
         if not self.canton_payee_party:
             raise ValueError(
                 "CANTON_ENABLED=true but CANTON_PAYEE_PARTY not configured. "
-                "Please set CANTON_PAYEE_PARTY in .env.canton or disable Canton with CANTON_ENABLED=false"
+                "Please set CANTON_PAYEE_PARTY in .env or disable Canton with CANTON_ENABLED=false"
             )
         if not self.canton_facilitator_url:
             raise ValueError(
                 "CANTON_ENABLED=true but CANTON_FACILITATOR_URL not configured. "
-                "Please set CANTON_FACILITATOR_URL in .env.canton"
+                "Please set CANTON_FACILITATOR_URL in .env"
             )
         if not self.canton_network:
             raise ValueError(
                 "CANTON_ENABLED=true but CANTON_NETWORK not configured. "
-                "Please set CANTON_NETWORK (e.g., 'canton-local', 'canton-testnet') in .env.canton"
+                "Please set CANTON_NETWORK (e.g., 'canton-local', 'canton-testnet') in .env"
             )
 
     def get_tool_price(self, tool_name: str, arguments: dict) -> float:

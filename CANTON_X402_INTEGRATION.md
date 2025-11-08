@@ -46,7 +46,7 @@ The integration follows a **non-destructive, additive approach**:
    - Updated DCAP reporting to handle Canton Coin (CC) currency alongside USDC
    - Currency detection based on `facilitator_type` from request state
 
-4. **`env.canton.example`**
+4. **`.env.example`**
    - Created example environment configuration file with both payment options documented
 
 5. **`README.md`**
@@ -149,7 +149,7 @@ To test the integration:
    # In canton-mcp-server directory
    cd /Users/martinmaurer/Projects/Martin/servers/canton-mcp-server
    
-   # Edit .env.canton
+   # Edit .env
    CANTON_ENABLED=true
    CANTON_FACILITATOR_URL=http://localhost:3000
    CANTON_PAYEE_PARTY=YourServiceParty::12207...
