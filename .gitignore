@@ -182,3 +182,10 @@ daml_audit_logs/
 # PDF source files (too large for GitHub, YAML files are what matter)
 resources/*.pdf
 resources/**/*.pdf
+
+# Price list files (sensitive data - Excel files and databases)
+resources/*.xlsx
+resources/**/*.xlsx
+resources/pricelists/
+*.db
+*.db-journal
