@@ -16,6 +16,7 @@ dependencies = [
     "watchdog>=4.0.0",
     "pyyaml>=6.0.0",
     "jsonschema>=4.0.0",
+    "openpyxl>=3.1.0",
 ]
 keywords = ["mcp", "model-context-protocol", "tools", "tabletop"]
 classifiers = [

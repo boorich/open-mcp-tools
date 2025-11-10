@@ -22,11 +22,21 @@ from .handlers import (
 from .handlers.resource_handler import handle_resources_list
 from .handlers.tool_handler import handle_tools_call
 from .core.types import JSONRPCRequest
-from .core.responses import ErrorCodes, success_response, error_response
+from .core.responses import ErrorCodes, Response
 from .payment_handler import PaymentHandler
 from .utils.conversion import convert_keys_to_snake_case
 
 logger = logging.getLogger(__name__)
+
+
+def success_response(request_id, result):
+    """Create success JSON-RPC response dict for stdio"""
+    return Response.success(request_id, result).to_camel_dict()
+
+
+def error_response(request_id, error_code: int, message: str):
+    """Create error JSON-RPC response dict for stdio"""
+    return Response.error(request_id, error_code, message).to_camel_dict()
 
 
 async def handle_stdio_request(data: dict) -> dict:
