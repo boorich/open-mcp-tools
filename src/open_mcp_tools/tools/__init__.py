@@ -9,4 +9,7 @@ from . import rag  # noqa: F401
 # Import business coaching tools to trigger registration
 from . import business  # noqa: F401
 
+# Import utility tools to trigger registration
+from . import utils  # noqa: F401
+
 __all__ = []
