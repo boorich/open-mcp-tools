@@ -18,6 +18,7 @@ class ResourceCategory(Enum):
     """Resource categories for open-mcp-tools://* URIs"""
     
     RULEBOOK = "rulebooks"
+    BUSINESS_BOOK = "business-books"
     # Future categories can be added here
 
 
@@ -99,6 +100,14 @@ class RulebookResource(CanonicalResource):
     def __init__(self, name: str, metadata: CanonicalResourceMetadata, content: Dict[str, Any]):
         super().__init__(name, metadata, content)
         self.metadata.category = ResourceCategory.RULEBOOK
+
+
+class BusinessBookResource(CanonicalResource):
+    """Business book resource for coaching and entrepreneurship"""
+    
+    def __init__(self, name: str, metadata: CanonicalResourceMetadata, content: Dict[str, Any]):
+        super().__init__(name, metadata, content)
+        self.metadata.category = ResourceCategory.BUSINESS_BOOK
 
 
 def parse_resource_uri(uri: str) -> Optional[Dict[str, str]]:

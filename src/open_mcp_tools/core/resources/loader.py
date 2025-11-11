@@ -19,6 +19,7 @@ from .base import (
     CanonicalResourceMetadata,
     ResourceCategory,
     RulebookResource,
+    BusinessBookResource,
 )
 from .registry import get_registry
 from .validator import get_validator, SchemaValidationError
@@ -78,6 +79,7 @@ class ResourceLoader:
         
         # Load resources by category
         self._load_category_resources(ResourceCategory.RULEBOOK, "rulebooks")
+        self._load_category_resources(ResourceCategory.BUSINESS_BOOK, "business-books")
         
         stats = self.registry.get_stats()
         logger.info(f"Loaded {stats['total']} resources")
@@ -117,6 +119,7 @@ class ResourceLoader:
             # Determine resource type for schema validation
             resource_type_map = {
                 ResourceCategory.RULEBOOK: "resource",  # Generic schema
+                ResourceCategory.BUSINESS_BOOK: "business-book",  # Business book schema
             }
             resource_type = resource_type_map.get(category)
             
@@ -172,6 +175,11 @@ class ResourceLoader:
             resource = None
             if category == ResourceCategory.RULEBOOK:
                 resource = RulebookResource(name, metadata, content)
+                # Store source_pdf as an attribute for easy access
+                if source_pdf:
+                    resource.source_pdf = source_pdf
+            elif category == ResourceCategory.BUSINESS_BOOK:
+                resource = BusinessBookResource(name, metadata, content)
                 # Store source_pdf as an attribute for easy access
                 if source_pdf:
                     resource.source_pdf = source_pdf
@@ -241,6 +249,10 @@ class ResourceLoader:
             if parent.name == "rulebooks":
                 category = ResourceCategory.RULEBOOK
                 category_name = "rulebooks"
+                break
+            elif parent.name == "business-books":
+                category = ResourceCategory.BUSINESS_BOOK
+                category_name = "business-books"
                 break
         
         if category is None:
