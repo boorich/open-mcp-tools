@@ -60,6 +60,23 @@ docker-compose up -d
 docker-compose logs -f
 ```
 
+### 5. Docker Desktop Auto-Start (EMPFOHLEN)
+
+**Für automatischen Start nach System-Neustart:**
+
+**Windows & Mac:**
+1. Docker Desktop öffnen
+2. Settings (⚙️) → General
+3. ☑️ "Start Docker Desktop when you log in" aktivieren
+
+**Vorteil:**
+- Container startet automatisch beim System-Start
+- 🐳 Docker-Icon in Statusleiste zeigt Status:
+  - **Grün** = Docker läuft, Tools verfügbar
+  - **Grau/Rot** = Docker gestoppt
+
+✅ Konfiguriert durch `restart: unless-stopped` in docker-compose.yml
+
 ## 📦 Verfügbare Tools
 
 Der Container stellt folgende MCP-Tools bereit:
@@ -87,12 +104,12 @@ Bearbeiten Sie `docker-compose.yml`:
 
 ```yaml
 environment:
-  - MCP_MODE=stdio              # MCP-Protokoll-Modus
-  - PYTHONUNBUFFERED=1          # Python-Ausgabe-Pufferung
+  - PYTHONUNBUFFERED=1          # Python-Ausgabe nicht puffern
+  - RAG_DB_DIR=/app/resources/pricelists  # Datenbank-Verzeichnis
   # Optional: DCAP Broadcasting aktivieren
-  - DCAP_BROADCAST_ENABLED=true
-  - DCAP_RELAY_HOST=159.89.110.236
-  - DCAP_RELAY_PORT=10191
+  # - DCAP_BROADCAST_ENABLED=true
+  # - DCAP_RELAY_HOST=159.89.110.236
+  # - DCAP_RELAY_PORT=10191
 ```
 
 ### Volumes
@@ -154,36 +171,45 @@ tar -czf pricelists-backup-$(date +%Y%m%d).tar.gz resources/pricelists/
 
 ### Cursor AI / Claude Desktop
 
-Fügen Sie zur MCP-Konfiguration hinzu:
+1. **Container muss laufen:**
+   ```bash
+   docker-compose up -d
+   ```
 
-```json
-{
-  "mcpServers": {
-    "otto-mayer-rag-tools": {
-      "command": "docker",
-      "args": [
-        "compose",
-        "-f",
-        "/pfad/zu/open-mcp-tools/docker-compose.yml",
-        "run",
-        "--rm",
-        "mcp-rag-tools"
-      ]
-    }
-  }
-}
-```
+2. **MCP-Konfiguration** in `~/.cursor/mcp.json`:
 
-### Direkt via Docker
+   ```json
+   {
+     "mcpServers": {
+       "otto-mayer-rag": {
+         "type": "sse",
+         "url": "http://localhost:7284/mcp"
+       }
+     }
+   }
+   ```
+
+3. **Cursor neu starten** → Tools sind verfügbar!
+
+### Verbindung testen
 
 ```bash
-docker run -i --rm \
-  -v $(pwd)/resources/pricelists:/app/resources/pricelists \
-  open-mcp-tools:rag-client \
-  --mode stdio
+# Health-Check
+curl http://localhost:7284/health
+
+# Sollte zurückgeben: {"status":"healthy","timestamp":"..."}
 ```
 
-## 📊 Ressourcen-Limits
+## 📊 Ressourcen & Port
+
+### Exponierter Port
+
+- **Port 7284** - MCP Server (HTTP/SSE)
+  - Health: `http://localhost:7284/health`
+  - MCP Endpoint: `http://localhost:7284/mcp`
+  - Server Info: `http://localhost:7284/`
+
+### Ressourcen-Limits
 
 Standard-Konfiguration in `docker-compose.yml`:
 
