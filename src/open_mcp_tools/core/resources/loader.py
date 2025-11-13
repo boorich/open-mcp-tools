@@ -77,7 +77,8 @@ class ResourceLoader:
             return
         
         # Load resources by category
-        self._load_category_resources(ResourceCategory.RULEBOOK, "rulebooks")
+        # NOTE: Rulebooks disabled for RAG-only client build
+        # self._load_category_resources(ResourceCategory.RULEBOOK, "rulebooks")
         
         stats = self.registry.get_stats()
         logger.info(f"Loaded {stats['total']} resources")

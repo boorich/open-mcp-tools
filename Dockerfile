@@ -1,59 +1,57 @@
-# Canton MCP Server - Development Dockerfile
-# Uses Python 3.12 with uv for fast dependency management
+# Multi-stage build for smaller final image
+FROM python:3.11-slim as builder
 
-FROM python:3.12-slim AS builder
-
-# Install uv
+# Install uv for fast dependency resolution
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
 # Set working directory
 WORKDIR /app
 
-# Copy dependency files and README (needed by hatchling build)
-COPY pyproject.toml uv.lock README.md ./
+# Copy dependency files
+COPY pyproject.toml ./
+COPY README.md ./
 
-# Copy source code (needed for editable install)
-COPY src/ ./src/
+# Copy source code
+COPY src ./src
 
-# Install dependencies
-RUN uv sync --frozen --no-dev
+# Install dependencies and build the package
+RUN uv pip install --system --no-cache .
 
 # Final stage
-FROM python:3.12-slim
+FROM python:3.11-slim
 
-# Install uv in final stage
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+# Set environment variables
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    MCP_MODE=stdio
 
-# Create non-root user
-RUN useradd -m -u 1000 canton && \
-    mkdir -p /app && \
-    chown -R canton:canton /app
+# Create app user for security
+RUN useradd -m -u 1000 mcpuser && \
+    mkdir -p /app/resources/pricelists && \
+    chown -R mcpuser:mcpuser /app
 
+# Set working directory
 WORKDIR /app
 
-# Copy installed dependencies from builder
-COPY --from=builder --chown=canton:canton /app/.venv /app/.venv
+# Copy installed packages from builder
+COPY --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
+COPY --from=builder /usr/local/bin/open-mcp-tools /usr/local/bin/open-mcp-tools
 
-# Copy application code
-COPY --chown=canton:canton pyproject.toml uv.lock README.md ./
-COPY --chown=canton:canton src/ ./src/
-COPY --chown=canton:canton resources/ ./resources/
-COPY --chown=canton:canton schemas/ ./schemas/
+# Copy source code (needed for resource loading)
+COPY --chown=mcpuser:mcpuser src ./src
+COPY --chown=mcpuser:mcpuser schemas ./schemas
+COPY --chown=mcpuser:mcpuser resources ./resources
 
 # Switch to non-root user
-USER canton
+USER mcpuser
 
-# Set Python path to use virtual environment
-ENV PATH="/app/.venv/bin:$PATH"
-ENV PYTHONPATH="/app/src:$PYTHONPATH"
-
-# Expose MCP server port
-EXPOSE 7284
+# Create volume mount points
+VOLUME ["/app/resources/pricelists"]
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:7284/health').read()" || exit 1
+    CMD python -c "import open_mcp_tools; print('healthy')" || exit 1
 
 # Default command
-CMD ["uv", "run", "canton-mcp-server", "serve"]
-
+ENTRYPOINT ["open-mcp-tools"]
+CMD ["--mode", "stdio"]
