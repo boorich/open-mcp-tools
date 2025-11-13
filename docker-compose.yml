@@ -22,7 +22,8 @@ services:
     # Volume mounts for persistent data
     volumes:
       # Mount directory for price lists and database
-      - ./resources/pricelists:/app/resources/pricelists
+      # Can be overridden via environment variable PRICELISTS_DIR
+      - ${PRICELISTS_DIR:-./resources/pricelists}:/app/resources/pricelists
       # Optional: Mount custom configuration
       # - ./config:/app/config:ro
     

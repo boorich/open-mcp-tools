@@ -18,16 +18,39 @@ cd open-mcp-tools
 git checkout release/rag-tools-client
 ```
 
-### 2. Preislisten vorbereiten
+### 2. Pfad-Konfiguration (Optional)
 
-Legen Sie Ihre Excel-Preislisten in den Ordner:
+**Standard:** Preislisten werden in `./resources/pricelists` erwartet.
+
+**Eigener Pfad?** Erstellen Sie eine `.env` Datei:
 
 ```bash
-mkdir -p resources/pricelists
-# Kopieren Sie Ihre .xlsx Dateien hierhin
+# Beispiel-Datei kopieren
+cp docker.env.example .env
+
+# Pfad anpassen (z.B.)
+echo "PRICELISTS_DIR=/home/kunde/meine-preislisten" > .env
 ```
 
-### 3. Container starten
+**Mögliche Pfade:**
+- `./resources/pricelists` - Relativ zum Projektverzeichnis (Standard)
+- `/absolute/pfad/zu/preislisten` - Absoluter Pfad
+- `~/Dokumente/preislisten` - Home-Verzeichnis
+
+### 3. Preislisten vorbereiten
+
+Legen Sie Ihre Excel-Preislisten in den konfigurierten Ordner:
+
+```bash
+# Standard-Pfad
+mkdir -p resources/pricelists
+# Kopieren Sie Ihre .xlsx Dateien hierhin
+
+# ODER: Eigener Pfad (wenn in .env konfiguriert)
+mkdir -p /ihr/eigener/pfad
+```
+
+### 4. Container starten
 
 ```bash
 # Image bauen und Container starten
