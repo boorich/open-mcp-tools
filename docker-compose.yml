@@ -6,10 +6,14 @@ services:
     container_name: otto-mayer-rag-tools
     image: open-mcp-tools:rag-client
     
+    # Expose MCP server port
+    ports:
+      - "7284:7284"
+    
     # Environment configuration
     environment:
-      - MCP_MODE=stdio
       - PYTHONUNBUFFERED=1
+      - RAG_DB_DIR=/app/resources/pricelists
       # Optional: DCAP broadcasting
       # - DCAP_BROADCAST_ENABLED=true
       # - DCAP_RELAY_HOST=159.89.110.236
@@ -34,10 +38,6 @@ services:
     
     # Restart policy
     restart: unless-stopped
-    
-    # Stdin/stdout for MCP stdio protocol
-    stdin_open: true
-    tty: true
     
     # Logging
     logging:

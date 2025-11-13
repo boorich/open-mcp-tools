@@ -48,10 +48,12 @@ USER mcpuser
 # Create volume mount points
 VOLUME ["/app/resources/pricelists"]
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD python -c "import open_mcp_tools; print('healthy')" || exit 1
+# Expose MCP server port
+EXPOSE 7284
 
-# Default command
+# Health check (HTTP endpoint)
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:7284/health').read()" || exit 1
+
+# Default command: Run in HTTP/SSE mode
 ENTRYPOINT ["open-mcp-tools"]
-CMD ["--mode", "stdio"]

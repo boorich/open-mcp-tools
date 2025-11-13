@@ -95,11 +95,18 @@ class RagImportPricelistTool(Tool[RagImportPricelistParams, RagImportPricelistRe
         # Initialize database if needed
         init_database()
         
+        from .database import DB_DIR
+        
         file_path = Path(ctx.params.file_path)
         if not file_path.is_absolute():
-            # Try relative to project root
-            project_root = Path(__file__).parent.parent.parent.parent.parent
-            file_path = project_root / file_path
+            # Try relative to DB directory first (most common case in Docker)
+            if file_path.parts[0] == "resources" and file_path.parts[1] == "pricelists":
+                # Strip resources/pricelists prefix and use DB_DIR
+                file_path = DB_DIR / Path(*file_path.parts[2:])
+            else:
+                # Try relative to project root
+                project_root = Path(__file__).parent.parent.parent.parent.parent
+                file_path = project_root / file_path
         
         if not file_path.exists():
             result = RagImportPricelistResult(

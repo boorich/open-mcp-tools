@@ -5,14 +5,15 @@ Handles SQLite database connection, schema creation, and initialization.
 """
 
 import logging
+import os
 import sqlite3
 from pathlib import Path
 from typing import Optional
 
 logger = logging.getLogger(__name__)
 
-# Database location
-DB_DIR = Path(__file__).parent.parent.parent.parent.parent / "resources" / "pricelists"
+# Database location - use environment variable or fall back to relative path
+DB_DIR = Path(os.getenv("RAG_DB_DIR", Path(__file__).parent.parent.parent.parent.parent / "resources" / "pricelists"))
 DB_PATH = DB_DIR / "pricelist.db"
 
 
